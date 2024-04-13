@@ -1,38 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    font-family: serif;
+    color: white;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-image {
+    width: 100%;
+    height: 37vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bottom-bg {
+    position: relative;
+    background-color: hsl(235, 21%, 11%);
+    width: 100%;
+    top: -0.2rem;
+    min-height: 200vh;
+    padding-bottom: 10rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.absolute {
+    z-index: 999;
+    width: 100%;
+    padding: 20px;
+    top: 2rem;
+    box-shadow: 1rem 1rem 3rem black;
 }
 
-.App-link {
-  color: #61dafb;
+.top div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top div.margin {
+    margin-bottom: 30px;
+}
+
+h1 {
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.top {
+    margin-top: -160px;
+}
+
+.theme-icon {
+    height: 1.5rem;
+}
+
+.container {
+    background-color: hsl(235, 24%, 19%);
+    width: 100%;
+    /* height: 3rem; */
+    border-bottom: 1px solid hsl(234, 11%, 52%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container.input {
+    height: 3rem;
+    border-radius: 0.2rem;
+}
+
+.textbox {
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+input {
+    font-size: 0.8rem;
+    width: 70%;
+    background-color: transparent;
+    height: 2.5rem;
+    border: none;
+    color: white;
+}
+
+input::placeholder {
+    font-size: 0.6rem;
+    color: hsl(234, 39%, 85%);
+}
+
+input:focus {
+    outline: none;
+}
+
+.round-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid hsl(234, 11%, 52%);
+    border-radius: 100%;
+    left: 1rem;
+    top: 0.8rem;
+}
+
+.is-checked {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.add {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.checkmark {
+    height: 0.5rem;
+}
+
+.remove-icon {
+    align-self: end;
+    justify-self: end;
+    height: 0.7rem;
+}
+
+.lists {
+    margin-top: 10px;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+}
+
+.list-item:first-child {
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+}
+
+.list-item div:nth-child(2) {
+    margin-right: 10px;
+}
+
+.list-item:last-child {
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.list-item p {
+    margin-left: 1rem;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    color: hsl(234, 39%, 85%);
+}
+
+.container.bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.clear, .items-count {
+    border: none;
+    background-color: transparent;
+    color: hsl(234, 11%, 52%);
+    font-size: 0.8rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    box-shadow: 1rem 1rem 3rem black;
+}
+
+.reorder {
+    text-align: center;
+    margin-top: 3rem;
+    color: hsl(234, 11%, 52%);
+    font-size: 0.8rem;
+    font-weight: 700;
 }
