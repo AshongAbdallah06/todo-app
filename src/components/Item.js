@@ -2,11 +2,10 @@ import React from 'react';
 import checkMark from '../images/icon-check.svg';
 import remove from '../images/icon-cross.svg'
 
-
-const Item = ({ todoList, handleDelete, handleChecked }) => {
+const Item = ({ filteredTodoList, handleDelete, handleChecked }) => {
     return (
         <>
-            {todoList.map(item => (
+            {filteredTodoList.map(item => (
                 <div className='container list-item' key={item.id}>
                     <div onClick={() => handleChecked(item.id)}>
                         <span className={`round-checkbox ${item.checked && 'is-checked'}`}>
@@ -34,4 +33,4 @@ const Item = ({ todoList, handleDelete, handleChecked }) => {
     )
 }
 
-export default Item
+export default Item;

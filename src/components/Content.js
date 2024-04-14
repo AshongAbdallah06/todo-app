@@ -5,7 +5,7 @@ import Filters from './Filters';
 
 
 const Content = ({ 
-    todo, setTodo, todoList, handleAddClick, handleDelete, handleChecked, handleClearCompleted, handleShowCompleted, handleShowAll
+    todo, setTodo, todoList, handleAddClick, handleDelete, handleChecked, handleClearCompleted, handleShowCompleted, handleShowActive, handleShowAll, filterState, filteredTodoList
 }) => {
 
     return (
@@ -21,11 +21,14 @@ const Content = ({
                 handleDelete={handleDelete}
                 handleChecked={handleChecked}
                 handleClearCompleted={handleClearCompleted}
+                filteredTodoList={filteredTodoList}
             />
 
             <Filters 
                 handleShowCompleted={handleShowCompleted}
-                handleShowAll={handleShowAll} 
+                handleShowActive={handleShowActive} 
+                handleShowAll={handleShowAll}
+                filterState={filterState}
             />
 
         </div>

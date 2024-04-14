@@ -180,6 +180,7 @@ input:focus {
     font-size: 0.8rem;
     border-radius: 0.2rem;
     box-shadow: 1rem 1rem 3rem black;
+    color: hsl(234, 11%, 52%);
 }
 
 .reorder {
