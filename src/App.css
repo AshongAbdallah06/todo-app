@@ -13,6 +13,18 @@
     width: 100%;
 }
 
+button, .round-checkbox, .remove-icon, .filters p, .desktop-filters {
+    cursor: pointer;
+}
+
+.filters p:hover, .desktop-filters:hover, .clear:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+.round-checkbox:hover {
+    border-color: white;
+}
+
 .bg-image {
     width: 100%;
     height: 37vh;
@@ -28,18 +40,16 @@
 }
 
 .absolute {
-    z-index: 999;
     width: 100%;
     padding: 20px;
-    top: 2rem;
-    box-shadow: 1rem 1rem 3rem black;
 }
 
-.top div {
+.top nav {
     display: flex;
     width: 100%;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 30px;
 }
 
 .top div.margin {
@@ -57,13 +67,13 @@ h1 {
 
 .theme-icon {
     height: 1.5rem;
+    cursor: pointer;
 }
 
 .container {
     background-color: hsl(235, 24%, 19%);
     width: 100%;
-    /* height: 3rem; */
-    border-bottom: 1px solid hsl(234, 11%, 52%);
+    border-bottom: 1px solid hsl(0, 1%, 82%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,11 +142,13 @@ input:focus {
 
 .lists {
     margin-top: 10px;
+    box-shadow: 1rem 1rem 3rem black;
 }
 
 .list-item {
     display: grid;
     grid-template-columns: 0fr 1fr 0fr;
+    cursor: pointer;
 }
 
 .list-item:first-child {
@@ -156,8 +168,28 @@ input:focus {
 .list-item p {
     margin-left: 1rem;
     font-size: 0.7rem;
-    line-height: 1rem;
+    line-height: 1.3rem;
+    /* color: hsl(234, 39%, 85%); */
+}
+
+.dark-checked, .light-checked {
+    text-decoration: line-through;
+}
+
+.dark-checked {
+    color: hsl(234, 11%, 52%);
+}
+
+.light-checked {
+    color: hsl(233, 11%, 84%);
+}
+
+.dark-unchecked {
     color: hsl(234, 39%, 85%);
+}
+
+.light-unchecked {
+    color: hsl(235, 19%, 35%);
 }
 
 .container.bottom {
@@ -180,7 +212,12 @@ input:focus {
     font-size: 0.8rem;
     border-radius: 0.2rem;
     box-shadow: 1rem 1rem 3rem black;
+    box-shadow: 1rem 1rem 3rem black;
+}
+
+.desktop-filters {
     color: hsl(234, 11%, 52%);
+    opacity: 0;
 }
 
 .reorder {
@@ -189,4 +226,119 @@ input:focus {
     color: hsl(234, 11%, 52%);
     font-size: 0.8rem;
     font-weight: 700;
+}
+
+
+@media (min-height: 600px) and (max-width: 1272px)  {
+    .App {
+        background-color: red;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .theme-icon {
+        height: 2em;
+    }
+
+    input {
+        width: 90%;
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+
+    input::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .top, .lists, .filters {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        box-shadow: none;
+    }
+
+    .lists {
+        margin-top: 1.5rem;
+    }
+
+    .filters {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .absolute {
+        margin-top: -200px;
+        position: absolute;
+    }
+
+    .list-item p, .clear, .items-count, .filters {
+        font-size: 1rem;
+    }
+
+    .list-item div {
+        white-space: wrap;
+    }
+
+    .bottom-bg {
+        min-height: 100rem;
+    }
+
+    .reorder {
+        font-size: 1rem;
+    }
+
+    .desktop-filters {
+        display: initial;
+        opacity: 1;
+    }
+    
+    .filters {
+        display: none;
+    }
+
+    .textbox {
+        margin-bottom: 0;
+    }
+
+}
+
+@media (min-height: 500px) and (max-width: 800px) {
+    .desktop-filters {
+        display: none;
+    }
+
+    .App {
+        background-color: red;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .theme-icon {
+        height: 2em;
+    }
+
+    input {
+        width: 90%;
+        padding: 0 1rem;
+        font-size: 1rem;
+    }
+
+    input::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .list-item p, .clear, .items-count, .filters {
+        font-size: 1rem;
+    }
+
+    .bottom-bg {
+        min-height: 100rem;
+    }
 }

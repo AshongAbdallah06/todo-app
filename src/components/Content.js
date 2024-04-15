@@ -5,7 +5,7 @@ import Filters from './Filters';
 
 
 const Content = ({ 
-    todo, setTodo, todoList, handleAddClick, handleDelete, handleChecked, handleClearCompleted, handleShowCompleted, handleShowActive, handleShowAll, filterState, filteredTodoList
+    todo, setTodo, todoList, handleAddClick, handleDelete, handleChecked, handleClearCompleted, handleShowCompleted, handleShowActive, handleShowAll, filterState, filteredTodoList, listLength, darkTheme, setDarkTheme
 }) => {
 
     return (
@@ -14,6 +14,8 @@ const Content = ({
                 todo={todo}
                 setTodo={setTodo}
                 handleAddClick={handleAddClick}
+                darkTheme={darkTheme}
+                setDarkTheme={setDarkTheme}
             />
 
             <TodoItems 
@@ -22,6 +24,11 @@ const Content = ({
                 handleChecked={handleChecked}
                 handleClearCompleted={handleClearCompleted}
                 filteredTodoList={filteredTodoList}
+                listLength={listLength}
+                handleShowAll={handleShowAll}
+                handleShowActive={handleShowActive}
+                handleShowCompleted={handleShowCompleted}
+                darkTheme={darkTheme}
             />
 
             <Filters 

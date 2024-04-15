@@ -1,10 +1,13 @@
 import React from 'react'
 
-const EmptyList = ({ todoList }) => {
+const EmptyList = ({ filteredTodoList, darkTheme }) => {
     return (
         <>
-            { todoList.length === 0 && 
-                <div className='container'>
+            { filteredTodoList.length === 0 && 
+                <div className='container'
+                    style={{
+                        backgroundColor: !darkTheme && 'white'}}
+                >
                     <p style={{textAlign: 'center', color: "hsl(234, 11%, 52%)"}}>
                         Nothing to see here😒😒
                     </p>

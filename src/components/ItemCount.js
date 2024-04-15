@@ -1,11 +1,25 @@
 import React from 'react'
+import DesktopFilters from './DesktopFilters'
 
-const ItemCount = ({ todoList, handleClearCompleted }) => {
+const ItemCount = ({ 
+    handleClearCompleted, listLength, filterState, handleShowAll, handleShowActive, handleShowCompleted, darkTheme }) => {
     return (
-        <div className='container textbox bottom'>
+        <div className='container textbox bottom' style={{
+            ...(!darkTheme && {
+                backgroundColor: 'white',
+                borderBottomColor: 'red'
+            })
+        }}>
             <p className='items-count'>
-                {todoList.length && todoList.length} item{todoList.length !== 1 && 's'} left
+                {listLength && listLength} Item{listLength !== 1 && 's'}
             </p>
+            
+            <DesktopFilters 
+                handleShowActive={handleShowActive}
+                handleShowAll={handleShowAll}
+                handleShowCompleted={handleShowCompleted}
+            />
+
             <button className='clear' onClick={handleClearCompleted}>
                 Clear Completed
             </button>

@@ -8,6 +8,9 @@ function App() {
     const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('todolist')) || []);
     const [filterState, setFilterState] = useState("All");
     const [filteredTodoList, setFilteredTodoList] = useState([]);
+    const [listLength, setListLength] = useState("");
+    const [darkTheme, setDarkTheme] = useState(true);
+
 
     useEffect(() => {
         localStorage.setItem('todolist', JSON.stringify(todoList));
@@ -16,6 +19,11 @@ function App() {
     useEffect(() => {
         filterTodoList();
     }, [todoList, filterState]);
+
+    // To keep track of number of items
+    useEffect(() => {
+        setListLength(filteredTodoList.length);
+    }, [filteredTodoList])
 
     const filterTodoList = () => {
         switch (filterState) {
@@ -27,6 +35,7 @@ function App() {
                 break;
             default:
                 setFilteredTodoList(todoList);
+                setListLength(todoList.length);
         }
     };
 
@@ -67,11 +76,11 @@ function App() {
 
     return (
         <div className="App">
-            <BackgroundImage />
+            <BackgroundImage darkTheme={darkTheme} />
 
             <div className="section-container">
 
-                <div className='bottom-bg'>
+                <div className='bottom-bg' style={{backgroundColor:!darkTheme && 'white'}}>
                 <Content 
                     todo={todo}
                     setTodo={setTodo}
@@ -84,6 +93,10 @@ function App() {
                     handleShowActive={handleShowActive}
                     handleShowAll={handleShowAll}
                     filteredTodoList={filteredTodoList}
+                    filterState={filterState}
+                    listLength={listLength}
+                    darkTheme={darkTheme}
+                    setDarkTheme={setDarkTheme}
                 />
                 </div>
 
