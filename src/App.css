@@ -80,6 +80,10 @@ h1 {
     padding: 20px;
 }
 
+.white-background {
+    background-color: #fff;
+}
+
 .container.input {
     height: 3rem;
     border-radius: 0.2rem;
@@ -140,14 +144,33 @@ input:focus {
     height: 0.7rem;
 }
 
+.drag-icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: -0.6rem;
+    right: -1.2rem;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    transition: all 0.15s;
+}
+
+.drag-icon:hover {
+    cursor: grab;
+    background-color: hsla(232, 21%, 22%, 0.5);
+    /* background-color: hsl(233, 20%, 42%); */
+}
+
 .lists {
     margin-top: 10px;
     box-shadow: 1rem 1rem 3rem black;
+    background-color: hsl(235, 24%, 19%);
 }
 
 .list-item {
     display: grid;
-    grid-template-columns: 0fr 1fr 0fr;
+    position: relative;
+    grid-template-columns: 0fr 1fr 0.1fr;
     cursor: pointer;
 }
 
@@ -312,6 +335,10 @@ input:focus {
         display: none;
     }
 
+    .drag-icon {
+        display: none;
+    }
+
     .App {
         background-color: red;
     }
@@ -332,6 +359,10 @@ input:focus {
 
     input::placeholder {
         font-size: 0.8rem;
+    }
+
+    .list-item {
+        grid-template-columns: 0fr 1fr 0fr;
     }
 
     .list-item p, .clear, .items-count, .filters {
