@@ -2,14 +2,9 @@ import React from 'react'
 import DesktopFilters from './DesktopFilters'
 
 const ItemCount = ({ 
-    handleClearCompleted, listLength, filterState, handleShowAll, handleShowActive, handleShowCompleted, darkTheme }) => {
+    handleClearCompleted, listLength, handleShowAll, handleShowActive, handleShowCompleted, darkTheme }) => {
     return (
-        <div className='container textbox bottom' style={{
-            ...(!darkTheme && {
-                backgroundColor: 'white',
-                borderBottomColor: 'red'
-            })
-        }}>
+        <div className='container textbox bottom' style={{ backgroundColor: !darkTheme && 'white' }}>
             <p className='items-count'>
                 {listLength && listLength} Item{listLength !== 1 && 's'}
             </p>

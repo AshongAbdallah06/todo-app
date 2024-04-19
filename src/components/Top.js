@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import sun from '../images/icon-sun.svg';
 import moon from '../images/icon-moon.svg';
 
@@ -16,7 +16,7 @@ const Top = ({ todo, setTodo, handleAddClick, darkTheme, setDarkTheme }) => {
 
                 </div>
                 <div onClick={() => setDarkTheme(!darkTheme)}>
-                    <img src={darkTheme ? sun : moon} className='theme-icon' alt="" />
+                    <img src={darkTheme ? sun : moon} className='theme-icon' title='Change Theme' alt="" />
                 </div>
             </nav>
             
@@ -27,7 +27,7 @@ const Top = ({ todo, setTodo, handleAddClick, darkTheme, setDarkTheme }) => {
                 <input
                     style={{color: darkTheme ? 'white' : 'black'}}
                     onChange={(e) => {setTodo(e.target.value)}}
-                    onKeyUp={keyUp}
+                    onKeyDown={keyUp}
                     type="text" 
                     placeholder='Create a new todo...' />
                     <button 

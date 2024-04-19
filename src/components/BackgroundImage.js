@@ -11,7 +11,7 @@ const BackgroundImage = ({ darkTheme }) => {
         <div style={{width: '100%'}}>
             <picture>
                 <source srcset={!darkTheme ? mobileBgLight : mobileBgDark} media="(max-width: 650px)" />
-                <img className='bg-image' src={!darkTheme ? desktopBgLight : desktopBgDark} alt="MDN" />
+                <img className='bg-image' src={!darkTheme ? desktopBgLight : desktopBgDark} alt='background'/>
             </picture>
         </div>
     )
